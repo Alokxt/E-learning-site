@@ -1,0 +1,9 @@
+elarn/db.sqlite3
+elarn/media
+venv/
+
+__pycache__/
+*.pyc
+*.pyo
+
+.DS_Store
