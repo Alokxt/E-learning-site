@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <p>ARE YOU SURE YOU WANT TO ADD THIS COURSE></p>
+    <a href="{% url 'todolist' %}">Cancel</a>
+</head>
+<body>
+    <form method=="POST" action="">
+        {% csrf_token %}
+    {{add}}
+    <a href="{% url 'todolist' %}"> submit</a>
+    </form>
+    
+</body>
+</html>

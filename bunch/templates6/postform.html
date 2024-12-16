@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+    <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <fieldset class="form-group">
+        <legend class="border-bottom mb-4">profile info</legend>
+        {{postform.as_p}}
+    </fieldset>
+    <div class ="form-group">
+        <button class="btn btn-outline-info" type="submit">update</button>
+    </div>
+
+   </form>

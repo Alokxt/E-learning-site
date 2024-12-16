@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <form method="POST">
+        {% csrf_token %}
+    <title>Confirmation Page</title>
+    <p> Are You Sure You Want To Delete This Course From List</p>
+    <a href="{% url 'course_add' item.id %}"> Cancel</a>
+    <input type="button">Remove</input>
+
+    </form>
+    
+</head>
+<body>
+    
+</body>
+</html>

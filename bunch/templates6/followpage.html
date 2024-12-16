@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #fafafa;
+    color: #262626;
+    font-size: 14px;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #dbdbdb;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.navbar-logo h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #262626;
+}
+
+.navbar-icons .icon {
+    margin-left: 20px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+/* Container */
+.container {
+    max-width: 600px;
+    margin: 70px auto; /* Adjust for fixed navbar */
+    padding: 20px;
+}
+
+/* Feed Section */
+.feed {
+    margin-top: 20px;
+}
+
+.post {
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+    margin-bottom: 20px;
+    border-radius: 3px;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #efefef;
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 1px solid #dbdbdb;
+}
+
+.post-header h4 {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.post-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.caption {
+    padding: 10px;
+    font-size: 14px;
+}
+
+.post-actions {
+    padding: 10px;
+    display: flex;
+    gap: 15px;
+    border-top: 1px solid #efefef;
+}
+
+.post-actions span {
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* Post Button */
+.post-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3897f0;
+    color: white;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.custom-file-upload:hover {
+    background-color: #287dc2;
+}
+
+#file-upload {
+    display: none;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .container {
+        margin: 50px auto;
+        padding: 10px;
+    }
+}
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <div class="container">
+        <!-- Feed section -->
+        <section class="feed">
+            <!-- Loop through posts -->
+                <div class="post">
+                    <div class="post-header">
+                        <img class="profile-pic" src="{{dp.profile_photo.url }}" alt="Profile Photo">
+                        <h4>{{user_pro.username }}</h4>
+                        
+                    </div>
+
+                    <!-- Post Image -->
+                    {%  if key %}
+                        <div class="post-image">
+                            <img src="{{ user_pro.post_pic.url }}" alt="Posted Image">
+                        </div>
+                        <h2 class="caption">{{ user_pro.post.caption }}</h2>
+                        <a href="{% url 'start-chat' user_pro.username %}">Message</a>
+                        <h2>Posts</h2>
+                        <div class="post-image">
+                        {% for post in posts  %}
+                        <img src="{{ post.post_pic.url }}" alt="Posted Image">
+                        <h4>{{post.caption}}</h4>
+                        <div class="post-actions">
+                            <span class="like-btn">❤️</span>
+                            <span class="comment-btn">💬</span>
+                            <span class="share-btn">🔗</span>
+                        </div>
+
+                            
+                        {% endfor %}
+                        </div>
+                            
+
+                    <!-- Post Actions -->
+                    
+                </div>
+
+                    <form action="{% url 'unfollow_user' user_pro.id %}" method="POST">
+                        {% csrf_token %}
+                        <button type="submit">unfollow</button>
+                    </form>
+                  
+                    {% else %}
+                    <form action="{% url 'follow_user' user_pro.id %}" method="POST">
+                        {% csrf_token %}
+                        <button type="submit">Follow</button>
+                    </form>
+
+                    {% endif %}
+
+
+                    <!-- Caption -->
+                    
+            
+        </section>
+
+</head>
+<body>
+    
+</body>
+</html>

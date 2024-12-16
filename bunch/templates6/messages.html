@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/chatbox.css" >
+    <title>Document</title>
+</head>
+<body>
+    
+        <a href="{% url 'user-feed' %}">
+            <span class="icon" >🏠</span>
+        </a>
+    
+    <div id="create-group-container">
+        <button id="create_grpbtn">
+            <img src="/static/imges/groupicon.svg" alt="Create Group" class="group-icon">
+        </button> 
+    </div>
+    {% for usr in chats  %}
+    <h2>Messages</h2>
+    <h3></h3>
+    <a href="{% url 'start-chat' usr.followings.username %}">{{usr.followings.username}}</a>
+
+        
+    {% endfor %}
+
+    <div style="display: flex; align-items: center; padding-left: 30px; ">Communities</div>
+    
+    {% for grp in groups %}
+    <a href="{% url 'chat-pagehome' grp.group_name %}">{{grp.group_name}}</a>
+        
+    {% endfor %}
+
+    
+    <div  id="creategrpform" style= "display: none;">
+        <form method="POST" action="">
+            {% csrf_token %}
+            {{groupform.as_p}}
+            <button id="submitgrpform" type="submit">CREATE</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("create_grpbtn").addEventListener("click",()=>{
+            let a = document.getElementById("creategrpform")
+            console.log(a)
+            if(a.style.display == "none"){
+                a.style.display = "block";
+            }
+            else if(a.style.display == "block"){
+                a.style.display = "none";
+            }
+            
+        })
+
+        document.getElementById("submitgrpform").addEventListener("onclick",()=>{
+            let a = document.getElementById("creategrpform")
+            a.style.display = "none";
+        })
+
+
+
+    </script>
+
+
+
+        
+    
+</body>
+</html>

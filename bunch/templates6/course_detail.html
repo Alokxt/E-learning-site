@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Roadmaps</title>
+    <style>
+        body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header p {
+    font-size: 1.3rem;
+    margin-top: 10px;
+    font-weight: 300;
+}
+
+/* Navigation Styles */
+nav {
+    background-color: #2a5298;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #1e3c72;
+    color: #fff;
+}
+
+/* Main Content Styles */
+main {
+    padding: 30px 20px;
+    max-width: 1200px;
+    margin: 30px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    margin-bottom: 50px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #f0f2f5;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    color: #2a5298;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+section h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+section p, section ul {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+section ul li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+section ul li::before {
+    content: '•';
+    color: #2a5298;
+    position: absolute;
+    left: 0;
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+section a {
+    color: #2a5298;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 2px solid #2a5298;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+section a:hover {
+    color: #1e3c72;
+    border-color: #1e3c72;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #2a5298;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 1rem;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Enhanced Media Queries */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    header p {
+        font-size: 1.1rem;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        padding: 10px 20px;
+    }
+
+    section h2 {
+        font-size: 2rem;
+    }
+
+    section h3 {
+        font-size: 1.5rem;
+    }
+
+    section p, section ul {
+        font-size: 1rem;
+    }
+
+    main {
+        padding: 20px 15px;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Career Roadmaps</h1>
+        <p>Your guide to becoming a professional in Web Development, App Development, Machine Learning, Generative AI, Cyber Security, Data Science, and Cloud Computing.</p>
+    </header>
+    <nav class="navbar">
+        <ul>
+            <li class="nav-item"><a class="nav-link" href="{% url 'dashboard' %}">home</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'about-us' %}">about</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'courses' %}">courses</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'store' %}">Shop</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">contact</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'todolist' %}">TO DO LIST</a></li>
+            <li class="nav-item"><a class="Login" href="index1.html">Login/Regiter</a></li>
+        </ul>
+
+    </nav>
+    </div>
+    <h> {{course.course_field}}</h>
+
+    <nav>
+        <ul>
+            <li><a href="course.id">Web Development</a></li>
+            <li><a href="#app-development">App Development</a></li>
+            <li><a href="#machine-learning">Machine Learning</a></li>
+            <li><a href="#generative-ai">Generative AI</a></li>
+            <li><a href="#cyber-security">Cyber Security</a></li>
+            <li><a href="#data-science">Data Science</a></li>
+            <li><a href="#cloud-computing">Cloud Computing</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+
+            
+        <!----> Web Development Section -->
+        <section id="couse.id">
+            <h2>Web Development</h2>
+            <h3>Roadmap:</h3>
+            <p>1. <strong>Frontend Development:</strong> HTML, CSS, JavaScript, Responsive Design, JavaScript Frameworks/Libraries, Version Control, Build Tools, APIs, Testing.</p>
+            <p>2. <strong>Backend Development:</strong> Languages, Frameworks, Databases, Authentication/Authorization, APIs, Deployment.</p>
+            <p>3. <strong>Full-stack Development:</strong> Combining frontend and backend knowledge.</p>
+
+            <h3>Job Opportunities:</h3>
+            <ul>
+                <li>Frontend Developer</li>
+                <li>Backend Developer</li>
+                <li>Full-stack Developer</li>
+                <li>Web Developer</li>
+                <li>UI/UX Developer</li>
+            </ul>
+
+            <h3>Salary Constraints:</h3>
+            <ul>
+                <li>Entry Level: $50k - $75k</li>
+                <li>Mid-Level: $75k - $100k</li>
+                <li>Senior Level: $100k - $150k</li>
+            </ul>
+
+            <h3>Study Resources:</h3>
+            <ul>
+                <li><a href="https://www.freecodecamp.org/">FreeCodeCamp</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/">MDN Web Docs</a></li>
+                <li><a href="https://www.udemy.com/course/the-web-developer-bootcamp/">Udemy</a></li>
+                <li>YouTube Channels: Traversy Media, The Net Ninja</li>
+            </ul>
+        </section>
+
+        <!--- App Development Section -->
+        <section id="app-development">
+            <h2>App Development</h2>
+            <h3>Roadmap:</h3>
+            <p>1. <strong>Mobile Development Basics:</strong> Swift, Kotlin, Java, UI/UX Design.</p>
+            <p>2. <strong>Native Development:</strong> iOS, Android.</p>
+            <p>3. <strong>Cross-Platform Development:</strong> React Native, Flutter, Xamarin.</p>
+            <p>4. <strong>Backend for Mobile Apps:</strong> Firebase, GraphQL, RESTful APIs.</p>
+
+            <h3>Job Opportunities:</h3>
+            <ul>
+                <li>Mobile Developer</li>
+                <li>iOS Developer</li>
+                <li>Android Developer</li>
+                <li>Cross-Platform App Developer</li>
+            </ul>
+
+            <h3>Salary Constraints:</h3>
+            <ul>
+                <li>Entry Level: $55k - $85k</li>
+                <li>Mid-Level: $85k - $120k</li>
+                <li>Senior Level: $120k - $160k</li>
+            </ul>
+
+            <h3>Study Resources:</h3>
+            <ul>
+                <li><a href="https://www.udemy.com/course/ios-16-swift-5-the-complete-ios-app-development-bootcamp/">Udemy</a></li>
+                <li><a href="https://developer.android.com/docs">Android Developer Docs</a></li>
+                <li><a href="https://flutter.dev/docs">Flutter Docs</a></li>
+                <li>YouTube Channels: CodeWithChris, The Net Ninja</li>
+            </ul>
+        </section>
+
+        <!-- Machine Learning Section -->
+        <section id="machine-learning">
+            <h2>Machine Learning</h2>
+            <h3>Roadmap:</h3>
+            <p>1. <strong>Mathematics and Statistics:</strong> Linear Algebra, Calculus, Probability & Statistics.</p>
+            <p>2. <strong>Programming:</strong> Python, Libraries (NumPy, Pandas, Matplotlib, Scikit-Learn).</p>
+            <p>3. <strong>Machine Learning Concepts:</strong> Supervised Learning, Unsupervised Learning, Reinforcement Learning.</p>
+            <p>4. <strong>Deep Learning:</strong> Neural Networks, TensorFlow, Keras, PyTorch.</p>
+            <p>5. <strong>Specialized Areas:</strong> NLP, Computer Vision, Model Deployment.</p>
+
+            <h3>Job Opportunities:</h3>
+            <ul>
+                <li>Machine Learning Engineer</li>
+                <li>Data Scientist</li>
+                <li>AI Researcher</li>
+                <li>NLP Engineer</li>
+            </ul>
+
+            <h3>Salary Constraints:</h3>
+            <ul>
+                <li>Entry Level: $70k - $100k</li>
+                <li>Mid-Level: $100k - $140k</li>
+                <li>Senior Level: $140k - $200k+</li>
+            </ul>
+
+            <h3>Study Resources:</h3>
+            <ul>
+                <li><a href="https://www.coursera.org/learn/machine-learning">Coursera</a></li>
+                <li><a href="https://www.fast.ai/">Fast.ai</a></li>
+                <li><a href="https://www.kaggle.com/learn/overview">Kaggle Learn</a></li>
+                <li>YouTube Channels: StatQuest, 3Blue1Brown</li>
+            </ul>
+        </section>
+
+        <!-- Generative AI Section -->
+        <section id="generative-ai">
+            <h2>Generative AI</h2>
+            <h3>Roadmap:</h3>
+            <p>1. <strong>Understanding AI & ML Basics:</strong> Machine Learning foundations, Deep Learning.</p>
+            <p>2. <strong>Generative Models:</strong> GANs, VAEs.</p>
+            <p>3. <strong>Transformers:</strong> NLP, Image Generation.</p>
+            <p>4. <strong>Advanced Techniques:</strong> Diffusion Models, Reinforcement Learning.</p>
+            <p>5. <strong>Deployment:</strong> Cloud platforms, APIs.</p>
+
+            <h3>Job Opportunities:</h3>
+            <ul>
+                <li>AI Research Scientist</li>
+                <li>Generative AI Engineer</li>
+                <li>NLP Engineer</li>
+                <li>AI Product Developer</li>
+            </ul>
+
+            <h3>Salary Constraints:</h3>
+            <ul>
+                <li>Entry Level: $80k - $120k</li>
+                <li>Mid-Level: $120k - $160k</li>
+                <li>Senior Level: $160k - $220k+</li>
+            </ul>
+
+            <h3>Study Resources:</h3>
+            <ul>
+                <li><a href="https://openai.com/research">OpenAI’s Blog</a></li>
+                <li><a href="https://www.deepmind.com/research">DeepMind’s Blog</a></li>
+                <li><a href="https://www.coursera.org/specializations/generative-adversarial-networks-gans">Coursera</a></li>
+                <li>YouTube Channels: Yannic Kilcher, Two Minute Papers</li>
+            </ul>
+        </section>
+
+        <!-- Cyber Security Section -->
+        <section id="cyber-security">
+            <h2>Cyber Security</h2>
+            <h3>Roadmap:</h3>
+            <p>1. <strong>Networking Basics:</strong> TCP/IP, DNS, VPNs, Firewalls.</p>
+            <p>2. <strong>Operating Systems:</strong> Linux, Windows security basics.</p>
+            <p>3. <strong>Security Principles:</strong> Cryptography, Threat Modeling, Vulnerability Assessment.</p>
+            <p>4. <strong>Tools:</strong> Wireshark, Metasploit, Burp Suite.</p>
+            <p>5. -->

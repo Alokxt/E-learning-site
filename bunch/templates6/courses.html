@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - E-Learn</title>
+    <style>
+        /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #333;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Header Styles */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    margin: 0;
+    padding-left: 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    padding: 10px 15px;
+}
+
+nav ul li a.btn {
+    background-color: #007BFF;
+    border-radius: 5px;
+}
+
+nav ul li a.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Courses Section Styles */
+.courses {
+    padding: 50px 20px;
+    background-color: #cbbaba;
+    text-align: center;
+}
+
+.courses h2 {
+    color: #190303;
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.course-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.course-card {
+    background-color: #f0ecec;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: left;
+}
+
+.course-card h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+.course-card p {
+    margin: 15px 0;
+    font-size: 1rem;
+}
+
+.course-card a.btn {
+    display: inline-block;
+    background-color: #007BFF;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #fff;
+    text-align: center;
+}
+
+.course-card a.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <h1>E-Learn</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{% url 'dashboard' %}">Home</a></li>
+                <li><a href="{% url 'courses' %}">Courses</a></li>
+                <li><a href="{% url 'about-us' %}">About</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+                <li><a href="#" class="btn">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Courses Section -->
+    <section class="courses">
+        <h2>Courses Offered</h2>
+        <div class="course-grid">
+
+            
+            {% for course in course  %}
+            <div class="course-card">
+                <h3>{{course.course_name}}</h3>
+                <p> {{course.course_des}} </p>
+                
+                {% if course.course_image %}
+                <img src="{{course.course_image.url}}"  width=" 100" height="100" alt="">
+
+                {% else %}
+                <img src="/elarn/media/courses/Web-Development-696x533.jpg"  alt="">
+
+                    
+                {% endif %}
+                    
+                
+                <a href="{% url 'course_details' course.id %}" target="_blank" class="btn">{{course.course_field}} - {{course.id}}</a>
+            </div>
+
+
+                
+            {% endfor %}
+                
+
+            <!--<div class="course-card">
+                <h3>Web Development</h3>
+                <p>Learn the fundamentals of web development including HTML, CSS, JavaScript, and more.</p>
+                <a href="https://www.youtube.com/playlist?list=PLwebdev" target="_blank" class="btn">View Playlist</a>
+            </div>
+
+            
+            <div class="course-card">
+                <h3>Data Science</h3>
+                <p>Dive into data analysis, visualization, and machine learning with hands-on projects.</p>
+                <a href="https://www.youtube.com/playlist?list=PLdatasci" target="_blank" class="btn">View Playlist</a>
+            </div>
+
+            
+            <div class="course-card">
+                <h3>Digital Marketing</h3>
+                <p>Master online marketing, SEO, and social media strategies to grow your business.</p>
+                <a href="https://www.youtube.com/playlist?list=PLdigitalmktg" target="_blank" class="btn">View Playlist</a>
+            </div>
+
+            
+            <div class="course-card">
+                <h3>Graphic Design</h3>
+                <p>Explore the world of graphic design, learning tools like Photoshop, Illustrator, and more.</p>
+                <a href="https://www.youtube.com/playlist?list=PLgraphicdes" target="_blank" class="btn">View Playlist</a>
+            </div>
+
+            
+            <div class="course-card">
+                <h3>Cybersecurity</h3>
+                <p>Understand the essentials of cybersecurity and how to protect systems from attacks.</p>
+                <a href="https://www.youtube.com/playlist?list=PLcybersec" target="_blank" class="btn">View Playlist</a>
+            </div>
+
+        </div> -->
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 E-Learn. All rights reserved.</p>
+    </footer>
+</body>
+</html>

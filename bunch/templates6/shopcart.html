@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <style>
+ /* General Reset */
+body, h1, p {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #232f3e;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.navbar .border {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar .border:hover {
+    background-color: #37475a;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Product List */
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.product-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.product-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.product-card p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Order Form */
+.bill {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.bill h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #232f3e;
+}
+
+.submit-btn {
+    background-color: #ff9900;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #cc7a00;
+}
+
+/* Items Summary */
+.items {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.items p1, .items p2 {
+    font-size: 16px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .product-list {
+        grid-template-columns: 1fr;
+    }
+
+    .bill {
+        margin: 10px;
+    }
+}
+
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <div class="nav-logo border">
+                <div class="logo"></div>
+            </div>
+            
+            <div class="nav-address border">
+                <p class="add-first">Deliver to </p>
+                <div class="add-class">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p class="add-second">India</p>
+                </div>
+            </div>
+            <div class="nav-search">
+                
+                    <h1>ITEMS IN YOUR CART</h1>
+                    <p>hey there!</p>
+
+                <div class="search-ion"></div>
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="nav-signin border">
+                <p class="nav-second"><a href="{% url 'store' %}">Home</a></p>
+                
+            </div>
+            
+            {% if  user.is_active %}
+            <div class="nav-signin border"
+                <button type="button" name="logout"</button>
+                <p class="nav-second">LOGOUT</p>
+                </a>
+
+            {% else %}
+            <div class="nav-signin border">
+                <a href="{% url 'login_page' %}">
+                <button type="button" name="login"</button>
+                <p class="nav-second">LOGIN</p>
+                </a>
+                
+            {% endif %}
+                
+
+
+                
+            </div>
+            <div class="nav-return border">
+                <p><span>Returns</span></p>
+                <p class="nav-second">& Orders</p>
+            </div>
+
+            <div class="nav-cart border">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <a href="{% url 'wish-list' %}">cart</a>
+            </div>
+        </div>
+
+
+            <div class="panel-ops">
+                <a href="{% url 'dashboard' %}">
+                    <p>GO TO HOME</p></a>
+            </div>
+            <div class="panel-deals">
+                
+            </div>
+        </div>
+    </header>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <h1>ITEMS IN YOUR CART</h1>
+    <p>hey there!</p>
+    
+
+
+   <div class="product-list">
+    {% for item in cart_items  %}
+    
+    <!-- Product Item 1 -->
+        <div class="product-card">
+            <img src="{{item.product.item_img.url}}" alt="img" class="product-image">
+            <h3 class="product-title">{{item.product.item_name}}</h3>
+            <p class="product-price">{{item.product.item_prize}}</p>
+            <p>order quantity {{item.quantity}}</p>
+        </div>
+    {% endfor %}
+    </div>
+
+            <h3>YOUR order Total: ${{bill}}</h3>
+            
+
+            <div>
+                <h3>Items</h3>
+                {% for item in cart_items  %}
+                    <div class="items">
+                        <p1>{{item.product.item_name}} :</p1>
+                        <p2>USD {{item.product.prize}} </p2>
+                    </div>
+                 {% endfor %}
+                
+            </div>
+
+            <div style="text-align: center;">
+                <a href="{% url 'initiate_payment' %}" style="display: inline-block; background-color: #0070ba; color: white; font-size: 18px; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
+                    Pay with PayPal
+                </a>
+            </div>
+        
+    </div>
+        <div id="paypal-button-container"></div>
+        <p id="result-message"></p>
+
+        
+        <!-- Initialize the JS-SDK -->
+        <script src="https://www.paypal.com/sdk/js?client-id=AaR1muzzQeSwOBUKYQUdu55O0WkJthB249lwSevE7wUWrr-sJd1VchPMHtRCEIl5yJ8Q8XTJNSB0nfs4 &currency=INR"></script>
+        <script >
+             paypal.Buttons({
+            createOrder: function(data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: '{{ total_bill }}'
+                        }
+                    }]
+                });
+            },
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                    window.location.href = "{% url 'payment_success' %}?paymentId=" + data.orderID + "&PayerID=" + data.payerID;
+                });
+            },
+            onCancel: function(data) {
+                window.location.href = "{% url 'payment_cancelled' %}";
+            }
+        }).render('#paypal-button-container');
+        </script>
+        
+
+</body>
+</html>

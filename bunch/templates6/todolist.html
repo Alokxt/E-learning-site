@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List - E-Learn</title>
+    <style>
+        /* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #333;
+    background-color: #f0f0f0;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Header Styles */
+header {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo h1 {
+    margin: 0;
+    padding-left: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+nav ul li a.btn {
+    background-color: #ff6f61;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+nav ul li a.btn:hover {
+    background-color: #e65550;
+}
+
+/* To-Do List Section */
+.todo {
+    padding: 50px 20px;
+    background-color: #ffffff;
+    text-align: center;
+    border-radius: 10px;
+    margin: 30px auto;
+    max-width: 900px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.todo h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #007BFF;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.todo-lists {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.khatrnak{
+    color: #333;
+    background-color: #28a745;
+    padding: 25px;
+    margin: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(231, 61, 61, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: left;
+}
+
+.jordar{
+    color: #9f8585;
+    background-color: #be3939;
+    padding: 25px;
+    margin: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(231, 61, 61, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: left;
+
+}
+
+.todo-list {
+    background-color: #f9f9f9;
+    padding: 25px;
+    margin: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: left;
+}
+
+.todo-list h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.todo-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.todo-list ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s ease;
+}
+
+.todo-list ul li:hover {
+    background-color: #f1f1f1;
+}
+
+.todo-list ul li input[type="checkbox"] {
+    margin-right: 15px;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.todo-list ul li label {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.input-group {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.todo-list input[type="text"] {
+    width: calc(100% - 80px);
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+.remove-button{
+    color: #0fe320;
+    padding-right: 10px;
+}
+.todo-list button {
+    padding: 10px 15px;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.todo-list button:hover {
+    background-color: #218838;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #007BFF;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 50px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <h1>E-Learn</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{% url 'dashboard' %}">Home</a></li>
+                <li><a href="{% url 'courses' %}">Courses</a></li>
+                <li><a href="{% url 'about-us' %}">About</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+                <li><a href="{% url 'todolist' %}">To-Do List</a></li>
+                <li><a href="#" class="btn">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class = " khatrnak">
+        <form method="POST">
+            {% csrf_token %}
+            {{form}}
+            <button type="submit">Search Course </button>
+
+        </form>
+    </div>
+    
+    <div class="jordar">
+        
+        {% if coursename %}
+        <h2>Courses:</h2>
+        <ul>
+            {% for course in coursename %}
+                <li>{{ course.course_name }}</li> 
+                <a href="{% url 'add-task' course.id %}"> ENROLL</a>
+                <br>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p> No Courses available</p>
+            
+        {% endif %}
+            
+    </div>
+
+    <!-- To-Do List Section -->
+
+    <section class="todo">
+        <h2>Course To-Do List</h2>
+        <div class="todo-lists">
+
+            <!-- Courses Doing -->
+
+            <div class="todo-list">
+                <h3>Courses I'm Doing</h3>
+                <ul id="doing-list">
+                    <li>
+                        <input type="checkbox" id="course1" checked>
+                        <label for="course1">Web Development</label>
+                        <button type="submit"> DELETE</button>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="course2">
+                        <label for="course2">Data Science</label>
+                    </li>
+                    <!-- Add more courses here -->
+                </ul>
+                <div class="input-group">
+                    <input type="text" id="new-doing" placeholder="Add a new course...">
+                    <button onclick="addCourse('doing')">Add</button>
+                </div>
+            </div>
+
+            <!-- Courses To Do -->
+            <div class="todo-list">
+                <h3>Current Enrolled Courses</h3>
+                    <ul>
+                        
+                        
+                        {% for task in task  %}
+                        <li>{{task.work.course_name}}</li>
+                            
+                        {% endfor %}
+                            
+                       
+                        
+                    </ul>
+             
+                    <!--<button type="submit"> </button>
+                 
+
+                    <!-- Add more courses here -->
+                </ul>
+                <div class="input-group">
+                    <input type="text" id="new-todo" placeholder="Add a new course...">
+                    <button onclick="addCourse('todo')">Add</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 E-Learn. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function addCourse(type) {
+            let input, list;
+            if (type === 'doing') {
+                input = document.getElementById('new-doing');
+                list = document.getElementById('doing-list');
+            } else {
+                input = document.getElementById('new-todo');
+                list = document.getElementById('todo-list');
+            }
+
+            const courseName = input.value.trim();
+            if (courseName !== '') {
+                const li = document.createElement('li');
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.id = courseName;
+
+                const label = document.createElement('label');
+                label.htmlFor = courseName;
+                label.textContent = courseName;
+
+                li.appendChild(checkbox);
+                li.appendChild(label);
+                list.appendChild(li);
+                input.value = '';
+            }
+        }
+    </script>
+</body>
+</html> 
+

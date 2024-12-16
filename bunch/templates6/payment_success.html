@@ -1,0 +1,6 @@
+<h1>Payment Successful</h1>
+<p>Thank you for your purchase!</p>
+<p><strong>Payment ID:</strong> {{ payment.id }}</p>
+<p><strong>Payer Email:</strong> {{ payment.payer.payer_info.email }}</p>
+<p><strong>Total:</strong> {{ payment.transactions.0.amount.total }}</p>
+<a href="{% url 'store' %}">Move to Home</a>

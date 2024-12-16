@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Urbanist", sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+    /* 1rem = 10px  */
+    /* scroll-behavior: smooth; */
+    /* scroll-snap-type: Y proximity; */
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Poppins", sans-serif;
+  }
+
+
+/*layout*/
+p,li,a,label{
+    font-family: "urbanist", sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: 400;
+    color: var(--para-color);
+    line-height: 1.5;
+
+}
+a{
+    text-decoration: none;
+    color: var(--para-color);
+}
+
+li{
+    list-style: none;
+}
+
+/*Theme*/
+:root{
+    --main-color: #0062ff;
+    --supporting-color: #ebf3fe;
+    --font-color: #424242;
+
+    --bg-color: #f7fcff;
+    --heading-color: #000a19;
+    --para-color: #504e4d;
+
+}
+
+
+
+.container{
+    max-width: 1420px;
+    margin: 0 auto;
+    padding: 96px 24px;  ;
+}
+
+.section-why--choose .container:first-child{
+    padding: 6.4rem 0 2.4rem 0;
+}
+
+.section-courses{
+    background-color: var(--bg-color);
+}
+
+.section-courses .container:first-child{
+    padding: 6.4rem 0 2.4rem 0;
+}
+
+.section-about .container:first-child{
+    padding: 6.4rem 0 2.4rem 0;
+}
+
+
+.grid{
+    display: grid;
+}
+
+.grid-two--cols{
+    grid-template-columns: repeat(2,1fr);
+}
+
+.grid-three--cols{
+    grid-template-columns: repeat(3,1fr);
+}
+
+.grid-four--cols{
+    grid-template-columns: repeat(4,1fr);
+}
+
+.Login{
+    
+        display: inline-block;
+        padding: 12px,32px;
+        line-height: 45px;
+        background-color: red;
+        color: var(--bg-color);
+        border-radius: 6px;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        -ms-border-radius: 6px;
+        -o-border-radius: 6px;
+
+    
+    .btn:hover{
+        background-color: var(--para-color);
+        cursor: pointer;
+        box-shadow: var(--btn-box-shadow);
+    
+    }
+    
+}
+
+.section-common-heading{
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: capitalize;
+
+}
+
+.section-common-subheading{
+    color: var(--heading-color);
+}
+
+.section-common--title{
+    font-size: 20px;
+    margin: 24px 0 12px 0;
+}
+
+.fa-solid{
+    padding: 24px;
+    background-color: var(--supporting-color);
+    font-size: 24px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    color: var(--hero-heading-color);
+}
+
+.hero-btn .fa-solid{
+    padding: 12px;
+    align-items: center;
+}
+
+
+
+.btn{
+    display: inline-block;
+    padding: 12px,32px;
+    line-height: 45px;
+    background-color: var(--main-color);
+    color: var(--bg-color);
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+}
+
+.btn:hover{
+    background-color: var(--para-color);
+    cursor: pointer;
+    box-shadow: var(--btn-box-shadow);
+
+}
+
+
+
+
+
+.section-navbar{
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    
+
+}
+
+.section-navbar .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 24px;
+}
+
+.section-navbar .navbar ul{
+   display: flex;
+   gap: 32px;
+   
+
+   & li a{
+    color: var(--heading-color);
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 16px;
+    display: inline-block;
+    position: relative;
+
+
+    &::after{
+        content:"";
+        position:absolute;
+        bottom:-3px;
+        left: 0;
+        width: 0%;
+        border-bottom: 2px solid var(--main-color);
+        transition: all .3s linear;
+        -webkit-transition: all .3s linear;
+        -moz-transition: all .3s linear;
+        -ms-transition: all .3s linear;
+        -o-transition: all .3s linear;
+    }
+
+   }
+
+   & li a:hover:after{
+    width: 100%;
+   }
+
+
+}
+
+/*hero section*/
+
+main{
+    position: relative;
+    background-image: linear-gradient(
+        to top right,
+        #3d86fa,
+        #448fab,#4268a8,
+        #b3d2ff,
+        #ebf3fe
+
+
+    );
+}
+
+.section-hero .grid{
+    align-items: center;
+    gap: 64px;
+
+    & .hero-subheading {
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+        font-size: 1.7rem;
+        word-spacing: 0.2rem;
+        color: var(--hero-heading-color);
+        font-weight: 700;
+    }
+    
+    & .hero-heading {
+        font-size: 5.8rem;
+        line-height: 1.5;
+        font-family: "Jost";
+        color: var(--hero-heading-color);
+        font-weight: 900;
+    }
+    
+    & .hero-para {
+        color: var(--white-color);
+        margin: 2rem 0 4.2rem 0;
+    }
+  
+}
+
+.section-hero--image img {
+    width: 100%;
+    height: auto;
+    transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
+    -ms-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+}
+
+
+/*hape divider*/
+
+.custom-shape-divider-bottom-1723961138 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1723961138 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 93px;
+}
+
+.custom-shape-divider-bottom-1723961138 .shape-fill {
+    fill: #FFFFFF;
+}
+
+.section-about .about-div{
+    text-align: center;
+}
+
+
+/***** about section *****/
+
+.section-about .grid{
+    gap: 64px;
+}
+.section-about  img{
+    padding: 5px;
+    background-color: var(--supporting-color);
+    width: 150px;
+    height: auto;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    transition: all  0.5s linear;
+    -webkit-transition: all  0.5s linear;
+    -moz-transition: all  0.5s linear;
+    -ms-transition: all  0.5s linear;
+    -o-transition: all  0.5s linear;
+} 
+.icon:hover > img{
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    background: linear-gradient(to right, #0575e6,#021b79);
+}
+
+/***** End about section *****/
+
+/***** Course section *****/  
+.section-courses .grid{
+    gap: 64px;
+}
+
+.section-courses .course-div{
+    padding: 24px;
+}
+
+.section-courses .course-div:hover{
+    box-shadow: 13px  13px  13px  13px  gray;
+    
+}
+
+.section-why--choose .grid{
+    gap: 96px;
+
+}
+.why-choose--div{
+    margin-top: 32px;
+}
+.section-why--choose .text-align--right .why-choose--div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    text-align: right;
+
+}
+
+.common-text--highlight{
+    width: 50px;
+    aspect-ratio: 1;
+    background-color: var(--supporting-color);
+    color: var(--main-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 700;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.choose-center--div img{
+    width: 90%;
+    height: auto;
+}
+
+.choose-center--div,  figure{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+}
+.choose-center--div figure:before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    background-color: var(--main-color);
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    z-index: -1;
+    
+}
+.choose-center--div figure::before{
+    animation: circle 5s linear infinite;
+    -webkit-animation: circle 5s linear infinite;
+}
+@keyframes circle{
+    0%{
+        background-color: #b3d0ff;
+    }
+    25%{
+        background-color: #80b1ff;
+    }
+    50%{
+        background-color: #4d91ff;
+    }
+    75%{
+        background-color: #99c0ff;
+    }
+    100%{
+        background-color: #3318ff;
+    }
+}
+
+
+.choose-center--div figure::after{
+    width: 500px;
+    height: 500px;
+    background-color: transparent;
+    z-index: -2;
+    border: 5px solid var(--heading-color);
+
+}
+
+/***** Contact section *****/ 
+
+.section-contact--homepage{
+    width: 60%;
+    min-height: 300px;
+    margin: 0 auto;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15)0px 2px 6px 2px;
+    margin-bottom: 50px;
+    border-radius: 0.2rem;
+    -webkit-border-radius: 0.2rem;
+    -moz-border-radius: 0.2rem;
+    -ms-border-radius: 0.2rem;
+    -o-border-radius: 0.2rem;
+    padding: 0 3.2rem;
+    position: relative;
+    bottom: -9rem;
+    z-index: 1;
+    margin-bottom: -0.6px; 
+    background-color: var(--bg-color);
+    z-index: 1; 
+
+    & .grid{
+        align-items: center;
+    }
+}
+
+.section-contact--homepage img{
+    width: 90%;
+    height: auto;
+}
+.contact-title{
+    font-size: 38px;
+    line-height: 1.2;
+    color: #000a19;
+    
+}
+
+.contact-content p{
+    margin: 12px 0 24px 0;
+}
+
+
+
+.section-contact--homepage a{
+    color: white;
+    text-transform: capitalize;
+}
+
+
+
+/***** End Contact section *****/
+
+/***** footer *****/ 
+
+footer{
+    background-color: #000a19;
+}
+ 
+marquee{
+    width: 100%;
+    height: 50px;
+    position: relative;
+    background-color: #030e1f;
+    color: #f7fcff;
+    display: block;
+    line-height: 50px;
+    z-index: 999;
+    margin-bottom: 40px;
+}
+marquee a{
+    color: #f7fcff;
+    font-weight: bolder;
+    font-size: medium;
+}
+footer*{
+    color: white;
+}
+ 
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Disco</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />">
+    >
+    <link rel="stylesheet" href="/static/style1.css">
+</head>
+<body>
+    <header class="section-navbar">
+        
+        <div class="container">
+            <div class="navbar-brand">
+                <a href="index.html">
+                    <img src="./images/LDisco.png" alt="my learning disco" 
+                    width="20%"
+                    height="auto"
+                    />
+    
+                </a>
+                
+            </div>
+            
+        
+        <nav class="navbar">
+            <ul>
+                <li class="nav-item"><a class="nav-link" href="{% url 'dashboard' %}">home</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'about-us' %}">about</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'courses' %}">courses</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'store' %}">Shop</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'todolist' %}">TO DO LIST</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'profile_page' %}">Profile</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'user-feed' %}">User feed</a></li>
+
+                
+                {% if user.is_active %}
+                <li class="nav-item"><a href= "{% url 'logout' %} " class = "Login" >Logout</a></li>
+
+                {% else %}
+                <li class="nav-item"><a class="Login" href="{% url 'login_page' %}">Login/Regiter</a></li>
+                {% endif %}
+                    
+                
+            </ul>
+
+        </nav>
+        </div>
+
+    <marquee onmouseover="stop()" onmouseout="start()">
+
+        
+        {% for new in news %}
+
+        <a href = " " >{{new.title}}></a> 
+        <a href = " ">{{new.news_des}}</a>   
+            
+        {% endfor %}
+            
+       
+    </marquee>
+        <main>
+            <div class="section-hero">
+                <div class="container grid grid-two--cols">
+                    <div class="section-hero--content">
+                        <p class="hero-subheading">EMPOWERING LIFELONG LEARNING</p>
+                        <h1 class="hero-heading">Unlock your potential with LearningDisco</h1>
+                        <p class="hero-para">
+                            Welcome to LearningDisco,Your gateway to knowledge and skill development.We are dedicated you to provide high quality,accessible education for learners of all ages and background. 
+                        </p>
+                        <div class="hero-btn">
+                            <a href="services.html" class="btn btn-white">Learn With Us<i class="fa-solid fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+
+                        <div class="section-hero--image">
+                            <figure>
+                                <img src="./images/main-hero.png"
+                                alt="Main hero image 3D"
+                                />
+                            </figure>
+                        </div>
+                    
+                </div>
+            </div>
+            <div class="custom-shape-divider-bottom-1723961138">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+                    <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+                    <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+                </svg>
+            </div>
+            
+        </main>
+
+    </header>
+    <section class="section-about">
+        <div class="container">
+            <h2 class="section-common-heading">
+                About LearningDisco
+            </h2>
+            <p class="section-common-subheading">
+                Guiding your learning journey through research,Design,and Development excellence.
+            </p>
+        </div>
+        <div class="container grid grid-three--cols">
+            <div class="about-div">
+                <div class="icon">
+                    <img src="./images/research.png" alt="LearningDisco Research Team"/>
+                </div>
+                <h3 class="section-common-title">Research</h3>
+                <p>
+                    We start by learning what you need. We look at what's new and exciting in learning and choose topics that matches what you want to learn. 
+                </p>
+            </div>
+
+            <div class="about-div">
+                <div class="icon">
+                    <img src="./images/design.png" alt="LearningDisco Research Team"/>
+                </div>
+                <h3 class="section-common-title">Design</h3>
+                <p>
+                   Next,we make the lesson.We make fun them and interesting for you.We make sure they work for different ways people like to learn.
+                </p>
+            </div>
+
+            <div class="about-div">
+                <div class="icon">
+                    <img src="./images/dev.png" alt="LearningDisco Research Team"/>
+                </div>
+                <h3 class="section-common-title">Development</h3>
+                <p>
+                   After that we turn the lessons into things you can use online , we use the latest tools to make sure they work well and make you happy.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section-courses">
+        <div class="container">
+            <h2 class="section-common-heading">
+                Explore Our Courses
+            </h2>
+            <p class="section-common-subheading">
+               Discover a variety of Courses across different categories
+            </p>
+        </div>
+
+        <div class="container grid grid-four--cols">
+            <div class="course-div">
+                <div class="icon">
+                   
+                    <i class="fa-solid fa-code"></i>
+                </div>  
+                <h3 class="section-common-title">C++</h3>
+                <p>
+                    C++ is a cross-platform language that can be used to create high-performance applications. C++ was developed by Bjarne Stroustrup, as an extension to the C language. C++
+                </p>
+            </div>
+
+            <div class="course-div">
+                <div class="icon">
+                    
+                    <i class="fa-solid fa-code-merge"></i>
+                </div>  
+                <h3 class="section-common-title">DSA</h3>
+                <p>
+                    Data Structures and Algorithms (DSA) is a fundamental part of Computer Science that teaches you how to think and solve complex problems systematically.
+                </p>
+            </div>
+
+            <div class="course-div">
+                <div class="icon">
+                
+                    <i class="fa-solid fa-file-code"></i>
+                </div>  
+                <h3 class="section-common-title"> Web Development</h3>
+                <p>
+                    Web development refers to the creating, building, and maintaining of websites. It includes aspects such as web design, web publishing, web programming, and database management. It is the creation of an application that works over the internet i.e. websites.
+                </p>
+            </div>
+
+
+            <div class="course-div">
+                <div class="icon">
+            
+                    <i class="fa-solid fa-file"></i>
+                </div>  
+                <h3 class="section-common-title">MERN Stack</h3>
+                <p>
+                    The MERN stack is a collection of JavaScript-based technologies that are used together to develop web applications. The stack consists of MongoDB, Express, React, and Node. js.
+                </p>
+            </div>
+
+
+
+            <div class="course-div">
+                <div class="icon">
+                    <a href="Home.html">
+                    <i class="fa-solid fa-shield"></i>
+                </div>  
+                <h3 class="section-common-title">JS development
+                    
+                </h3>
+                <p>
+                    JavaScript is a programming language that adds interactivity to your website. This happens in games, in the behavior of responses when buttons are pressed or with data entry on forms; with dynamic styling; with animation, etc.
+                </p>
+            </div>
+
+
+
+            <div class="course-div">
+                <div class="icon">
+                    
+                    <i class="fa-solid fa-window-restore"></i>
+                </div>  
+                <h3 class="section-common-title">App development</h3>
+                <p>
+                    Mobile application development is the process of creating software applications that run on a mobile device, and a typical mobile application utilizes a network connection to work with remote computing resources.
+                </p>
+            </div>
+
+
+            <div class="course-div">
+                <div class="icon">
+                     <a href="Home.html">
+                    <i class="fa-solid fa-notdef"></i>
+                </div>  
+                <h3 class="section-common-title">HTML/CSS</h3>
+                <p>
+                    Front-end web development is the development of the graphical user interface of a website through the use of HTML, CSS, and JavaScript so users can view and interact with that website
+                </p>
+            </div>
+
+        </div>
+
+        <section class="section-why--choose">
+            <div class="container">
+                <h2 class="section-common-heading">
+                    Why Choose LearningDisco
+                    
+                </h2>
+                <p class="section-common-subheading">
+                  Choose LearningDisco For a  Learning experience that empowers you to achieve your goals.
+                </p>
+            </div>
+
+        
+        <!-- ========== left side of block ========== -->
+
+        <div class="container grid grid-three--cols">
+            <div class="choose-left--div text-align--right">
+                <div class="why-choose--div">
+                    <p class="common-text--highlight">1</p>
+                    <h3 class="section-common--title">Expert Instructors</h3>
+                    <p>
+                        Learn from the experienced teachers who are passionate about sharing knowledge and guiding you toward success in your learning journey.
+                    </p>
+                </div>
+
+                <div class="why-choose--div">
+                    <p class="common-text--highlight">2</p>
+                    <h3 class="section-common--title">Expert Instructors</h3>
+                    <p>
+                        Learn from the experienced teachers who are passionate about sharing knowledge and guiding you toward success in your learning journey.
+                    </p>
+                </div>
+
+                <div class="why-choose--div">
+                    <p class="common-text--highlight">3</p>
+                    <h3 class="section-common--title">Expert Instructors</h3>
+                    <p>
+                        Learn from the experienced teachers who are passionate about sharing knowledge and guiding you toward success in your learning journey.
+                    </p>
+                </div>
+            </div>
+        <!-- =========left side of block ========== -->
+
+        <!-- ========== center part of image ========== -->
+         <div class="choose-center--div">
+            <figure>
+                <img src="./images/mobile2.jpg" alt="LearningDisco Official website">
+            </figure>
+         </div>
+
+        
+        <!-- =========center part of image ========== -->
+        <!-- ========== right side of  block========== -->
+
+        <div class="choose-right--div text-align--left">
+            <div class="why-choose--div">
+                <p class="common-text--highlight">4</p>
+                <h3 class="section-common--title">Expert Instructors</h3>
+                <p>
+                    Learn from the experienced teachers who are passionate about sharing knowledge and guiding you toward success in your learning journey.
+                </p>
+            </div>
+
+            <div class="why-choose--div">
+                <p class="common-text--highlight">5</p>
+                <h3 class="section-common--title">Lifelong learning support</h3>
+                <p>
+                    Our commitment to your education doesn't end with a certificate.Recieve ongoing support and resource for continuous learning support and growth.
+                </p>
+            </div>
+
+            <div class="why-choose--div">
+                <p class="common-text--highlight">6</p>
+                <h3 class="section-common--title">Expert Instructors</h3>
+                <p>
+                    Learn from the experienced teachers who are passionate about sharing knowledge and guiding you toward success in your learning journey.
+                </p>
+            </div>
+        </div>
+
+        <!-- =========right side of  block========== -->
+
+
+        </div>
+        </section>
+        
+        
+        
+        
+        
+
+       
+
+        
+           
+    </section>
+
+    <div class="section-contact--homepage" id="section-contact--homepage">
+        <div class="container grid grid-two--cols">
+            <div class="contact-content">
+                <h2 class="contact-title">Let revolutionize the way you study</h2>
+                <p>Join our free books series too know us better</p>
+                <div class="btn">
+
+                    <a href="./Project LearningDisco/LDisco page.html"</a>Start Now
+                        <i class="fa-solid fa-arrow-circle-right"></i>
+                    
+                       
+                    
+                </div>
+            </div>
+            <div class="contact-image">
+                <img src="./images/main.png" alt="a guy doing coding">
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container grid grid-four--cols">
+            <div class="footer-1--div">
+                <div class="logo-brand">
+                    <a href="index.html" class="footer-subheading">LearningDisco</a>
+                </div>
+                <p>Let's revolutionize the way you study with LearningDisco</p>
+            
+
+             <div class="social-footer--icon">
+                <a href="https://github.com/GuptaShubham1512/DS2.git" target="_blank">
+                    <i class="fa-brands fa-github"></i>
+
+                </a>
+
+                <a href="https://www.instagram.com/shubhamgupta7436?igsh=cThyYWRrY2ppYjNt" target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+
+                </a>
+
+                <a href="https://www.instagram.com/shubhamgupta7436?igsh=cThyYWRrY2ppYjNt" target="_blank">
+                    <i class="fa-brands fa-youtube"></i>
+
+                </a>
+                
+             </div>
+            </div>
+            <div class="footer-2--div">
+                <p class="footer-subheading">Courses</p>
+                    <ul>
+                       <li><a href="index.html">Home</a></li>
+                       <li><a href="index.html">Home</a></li>
+                       <li><a href="index.html">Home</a></li>
+                       <li><a href="index.html">Home</a></li>
+                       <li><a href="index.html">Home</a></li>
+                    </ul>
+                
+            </div>
+
+            <div class="footer-3--div">
+                <p class="footer-subheading">Links</p>
+                    <ul>
+                       <li><a href="index.html">Home</a></li>
+                       <li><a href="index.html">Home</a></li>
+                       <li><a href="index.html">Home</a></li>
+                       <li><a href="index.html">Home</a></li>
+                       <li><a href="index.html">Home</a></li>
+                    </ul>
+                
+            </div>
+
+            <div class="footer-4--div">
+                <p class="footer-subheading">Privacy</p>
+                    <ul>
+                       <li><a href="index.html">Home</a></li>
+                       <li><a href="index.html">Home</a></li>
+                       <li><a href="index.html">Home</a></li>
+                       <li><a href="index.html">Home</a></li>
+                       <li><a href="index.html">Home</a></li>
+                    </ul>
+                
+            </div>
+        </div>
+    </footer>
+    
+
+
+   
+</body>
+</html>

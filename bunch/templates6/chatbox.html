@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <h1>Chat with {{chatting.username}} </h1>
+    <a href = "{% url 'user-feed' %}"> feed</a>
+</head>
+<style>
+    .profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 1px solid #dbdbdb;
+}
+</style>
+
+
+<body>
+
+    
+    {% for msg in chatting %}
+            
+    <h3><img class="profile-pic" src="{{ msg.sender.profile.profile_photo.url }}" alt="Profile Photo">{{msg.sender.username}}~ {{msg.msg}}</h3>
+
+        
+    {% endfor %}
+        
+
+    
+    <!--{% if opposite %}
+        {% for mag in opposite  %}
+        
+            <h3  > <img class="profile-pic" src="{{ pic1.profile_photo.url }}" alt="Profile Photo"> ~ {{mag.msg}} </h3> 
+        {% endfor %}
+                
+    {% endif %} -->
+
+        
+    <h>        </h>
+    <h1>       </h1>
+    <form  method="POST">
+        {% csrf_token %}
+        {{chat}}
+        <button type="submit">Send</button>
+    </form>
+    
+</body>
+</html>
