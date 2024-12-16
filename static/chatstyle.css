@@ -1,0 +1,120 @@
+.block {
+    margin: 2rem auto;
+    padding: 1.5rem;
+    max-width: 768px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Chat window styling */
+#chat_window {
+    display: flex;
+    flex-direction: column;
+    height: 45rem;
+    background-color: #1f2937;
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    padding: 0.5rem;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Online count header */
+#chat_window .sticky {
+    position: sticky;
+    top: 0;
+    background-color: #1f2937;
+    color: #34d399;
+    padding: 0.5rem;
+    text-align: center;
+    z-index: 10;
+    font-weight: bold;
+    border-bottom: 1px solid #2d3748;
+}
+
+/* Chat container styling */
+#chat_container {
+    overflow-y: auto;
+    flex-grow: 1;
+    padding: 1rem;
+}
+
+#chat_messages {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Individual messages */
+#chat_messages li {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+#chat_messages li .flex {
+    align-items: flex-end;
+}
+
+/* User messages */
+#chat_messages .justify-end {
+    justify-content: flex-end;
+}
+
+#chat_messages .justify-end .bg-green-200 {
+    background-color: #bbf7d0;
+    color: #065f46;
+    border-radius: 0.5rem 0.5rem 0 0.5rem;
+    padding: 0.75rem;
+    max-width: 75%;
+    font-size: 0.875rem;
+}
+
+/* Other users' messages */
+#chat_messages .justify-start .bg-white {
+    background-color: white;
+    color: #1a202c;
+    border-radius: 0.5rem 0 0.5rem 0.5rem;
+    padding: 0.75rem;
+    max-width: 75%;
+    font-size: 0.875rem;
+}
+
+/* Profile pictures */
+#chat_messages img {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* User info */
+.text-sm {
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    color: #e5e7eb;
+}
+
+.text-gray-400 {
+    color: #9ca3af;
+}
+
+/* Input bar */
+#chat_message_form input {
+    width: 100%;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    background-color: #2d3748;
+    color: #e2e8f0;
+    font-size: 0.875rem;
+}
+
+#chat_message_form input::placeholder {
+    color: #a0aec0;
+}
+
+#chat_message_form input:focus {
+    outline: none;
+    background-color: #4a5568;
+}
+
+
