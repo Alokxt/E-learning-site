@@ -11,5 +11,6 @@ urlpatterns = [
     path('payment-success/', views.payment_success, name='payment_success'),
     path('payment-cancelled/', views.payment_cancelled, name='payment_cancelled'),
     path('search-items/api/',views.search_items,name="search_items"),
+    path('productview/<int:item_id>/',views.productview,name="product-view"),
 
 ]

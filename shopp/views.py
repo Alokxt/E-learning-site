@@ -132,3 +132,6 @@ def search_items(request):
     print(items)
     return JsonResponse({'results':l})
 
+def productview(request,item_id):
+    item = shopsy.objects.get(id = item_id)
+    return render(request,'productview.html',{'item':item})

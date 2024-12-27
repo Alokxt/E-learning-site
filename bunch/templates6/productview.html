@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product View</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-view {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .product-image {
+            flex: 1 1 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .product-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .product-details {
+            flex: 1 1 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .product-details h1 {
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .product-details p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            color: #e63946;
+            font-weight: bold;
+        }
+
+        .product-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .product-actions button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .product-actions .buy-now {
+            background-color: #e63946;
+            color: white;
+        }
+
+        .product-actions .buy-now:hover {
+            background-color: #d62828;
+        }
+
+        .product-actions .add-to-cart {
+            background-color: #457b9d;
+            color: white;
+        }
+
+        .product-actions .add-to-cart:hover {
+            background-color: #1d3557;
+        }
+
+        @media (max-width: 768px) {
+            .product-view {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="{% url 'store' %}"><button>Back</button></a>
+    <div class="container">
+        <div class="product-view">
+            <div class="product-image">
+                <img src="{{item.item_img.url}}" alt="Product Image">
+            </div>
+            <div class="product-details">
+                <h1>{{item.item_name}}</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce non lacus vitae risus vehicula suscipit a nec justo. Donec vel est nec sapien malesuada viverra.</p>
+                <div class="product-price">{{item.prize}}</div>
+                <div class="product-actions">
+                    
+                    <a href="{% url 'add-item' item.id %}"><button class="add-to-cart">Add to Cart</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streamx</title>
+    <link rel="stylesheet" href="/static/videostreamdash.css" >
+</head>
+<body>
+    <div id ="videolistcontainer" class ="dashboardvideos" >
+        <div id="videocontains" class="list">
+            <ul>
+                
+                {% if obj %}
+                    
+                
+                    
+                {% for vid in obj  %}
+                <li>
+                    <a href="{% url 'playvideos' vid.id %}" alt="">
+                        <div class="videothumbnail">
+                            <img src="{{vid.video_thumbnail.url}}" alt="">
+                           
+            
+                        </div>
+                        <div class="videotitle">
+                            {{vid.video_title }} || {{vid.course}}
+                        </div>
+                        <div class="lowerinfo">
+                            {{vid.uploaded_at }}
+                        </div>
+                    </a>
+                </li>
+                {% endfor %}
+                    
+                {% endif %}
+            </ul>
+
+        </div>
+    </div>
+    <script>
+        
+        
+    </script>
+</body>
+
+</html>
